@@ -69,7 +69,11 @@ func astar_connect_walkable_cells(points_array):
 		# We connect the current point with it
 		var points_relative = PoolVector2Array([
 			Vector2(point.x + 1, point.y),
+			Vector2(point.x + 1, point.y + 1),
+			Vector2(point.x + 1, point.y - 1),
 			Vector2(point.x - 1, point.y),
+			Vector2(point.x - 1, point.y + 1),
+			Vector2(point.x - 1, point.y - 1),
 			Vector2(point.x, point.y + 1),
 			Vector2(point.x, point.y - 1)])
 		for point_relative in points_relative:
