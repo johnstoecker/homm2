@@ -1,8 +1,9 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://tileset/grid_lines/grid_lines_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://tileset/grid/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://pathfind_astar.gd" type="Script" id=3]
+[ext_resource path="res://map.png" type="Texture" id=4]
 [ext_resource path="res://homm2_hero_sprite_resized.png" type="Texture" id=6]
 [ext_resource path="res://homm2_hero_sprite_resized_2_flipped.png" type="Texture" id=7]
 [ext_resource path="res://homm2_hero_sprite_resized_2.png" type="Texture" id=8]
@@ -10,33 +11,33 @@
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 236, 42, 59 )
+atlas = ExtResource( 7 )
+region = Rect2( 420, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 177, 42, 59 )
+atlas = ExtResource( 8 )
+region = Rect2( 0, 236, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 42, 177, 42, 59 )
+region = Rect2( 378, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 84, 177, 42, 59 )
+region = Rect2( 336, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 126, 177, 42, 59 )
+region = Rect2( 294, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 168, 177, 42, 59 )
+region = Rect2( 252, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
@@ -46,76 +47,76 @@ region = Rect2( 210, 177, 42, 59 )
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 252, 177, 42, 59 )
+region = Rect2( 168, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 294, 177, 42, 59 )
+region = Rect2( 126, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 336, 177, 42, 59 )
+region = Rect2( 84, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 378, 177, 42, 59 )
+region = Rect2( 42, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 42, 118, 42, 59 )
+atlas = ExtResource( 7 )
+region = Rect2( 0, 177, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 84, 118, 42, 59 )
+region = Rect2( 42, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 126, 118, 42, 59 )
+region = Rect2( 84, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 168, 118, 42, 59 )
+region = Rect2( 126, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 210, 118, 42, 59 )
+region = Rect2( 168, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 252, 118, 42, 59 )
+region = Rect2( 210, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 294, 118, 42, 59 )
+region = Rect2( 252, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 336, 118, 42, 59 )
+region = Rect2( 294, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 378, 118, 42, 59 )
+region = Rect2( 336, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 420, 118, 42, 59 )
+region = Rect2( 378, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 7 )
+atlas = ExtResource( 8 )
 region = Rect2( 420, 118, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=23]
@@ -128,52 +129,52 @@ flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 0, 177, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 336, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 294, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 252, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 210, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 168, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 126, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 84, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=32]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 42, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 118, 42, 59 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 378, 118, 42, 59 )
@@ -186,52 +187,52 @@ region = Rect2( 0, 0, 42, 59 )
 [sub_resource type="AtlasTexture" id=36]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 0, 59, 42, 59 )
+region = Rect2( 378, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=37]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 42, 59, 42, 59 )
+region = Rect2( 336, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=38]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 84, 59, 42, 59 )
+region = Rect2( 294, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=39]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 126, 59, 42, 59 )
+region = Rect2( 252, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=40]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 168, 59, 42, 59 )
+region = Rect2( 210, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=41]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 210, 59, 42, 59 )
+region = Rect2( 168, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=42]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 252, 59, 42, 59 )
+region = Rect2( 126, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=43]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 294, 59, 42, 59 )
+region = Rect2( 84, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=44]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 336, 59, 42, 59 )
+region = Rect2( 42, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=45]
 flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 378, 59, 42, 59 )
+region = Rect2( 0, 59, 42, 59 )
 
 [sub_resource type="AtlasTexture" id=46]
 flags = 4
@@ -457,22 +458,22 @@ animations = [ {
 }, {
 "frames": [ SubResource( 1 ) ],
 "loop": false,
+"name": "idle_west",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": false,
 "name": "idle_south",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "walk_southwest",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "walk_east",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 22 ) ],
-"loop": false,
-"name": "idle_west",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 23 ) ],
@@ -485,7 +486,7 @@ animations = [ {
 "name": "idle_southeast",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 33 ), SubResource( 32 ), SubResource( 31 ), SubResource( 30 ), SubResource( 29 ), SubResource( 28 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ) ],
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "walk_west",
 "speed": 10.0
@@ -539,6 +540,7 @@ animations = [ {
 [node name="Game" type="Node"]
 
 [node name="GridLines" type="TileMap" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.331333 )
 tile_set = ExtResource( 1 )
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -547,14 +549,26 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 65537, 0, 0, 65541, 0, 0, 65545, 0, 0, 65550, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 458761, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0 )
+tile_data = PoolIntArray( 24, 0, 0, 25, 0, 0, 32, 0, 0, 65537, 0, 0, 65541, 0, 0, 65545, 0, 0, 65550, 0, 0, 65559, 0, 0, 65560, 0, 0, 65567, 0, 0, 65568, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131103, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196638, 0, 0, 196639, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262156, 0, 0, 262173, 0, 0, 262174, 0, 0, 327683, 0, 0, 327692, 0, 0, 327709, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524310, 0, 0, 524311, 0, 0, 524315, 0, 0, 524316, 0, 0, 589840, 0, 0, 589841, 0, 0, 589846, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655390, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720910, 0, 0, 720912, 0, 0, 720913, 0, 0, 720925, 0, 0, 720926, 0, 0, 786433, 0, 0, 786434, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786446, 0, 0, 786448, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851982, 0, 0, 851984, 0, 0, 851994, 0, 0, 851995, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917509, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917518, 0, 0, 917520, 0, 0, 917529, 0, 0, 917530, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983054, 0, 0, 983056, 0, 0, 983057, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048583, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048590, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179668, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245201, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245212, 0, 0, 1310729, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1310736, 0, 0, 1310741, 0, 0, 1310748, 0, 0, 1376259, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376277, 0, 0, 1376284, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441809, 0, 0, 1441813, 0, 0, 1441820, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507334, 0, 0, 1507335, 0, 0, 1507345, 0, 0, 1507346, 0, 0, 1507347, 0, 0, 1507348, 0, 0, 1507349, 0, 0, 1507350, 0, 0, 1507351, 0, 0, 1507356, 0, 0, 1572864, 0, 0, 1572865, 0, 0, 1572866, 0, 0, 1572867, 0, 0, 1572868, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572872, 0, 0, 1572873, 0, 0, 1572884, 0, 0, 1572885, 0, 0, 1572887, 0, 0, 1572888, 0, 0, 1572890, 0, 0, 1572891, 0, 0, 1572892, 0, 0, 1638400, 0, 0, 1638401, 0, 0, 1638402, 0, 0, 1638407, 0, 0, 1638408, 0, 0, 1638409, 0, 0, 1638410, 0, 0, 1638417, 0, 0, 1638418, 0, 0, 1638421, 0, 0, 1638422, 0, 0, 1638424, 0, 0, 1638425, 0, 0, 1638426, 0, 0, 1703936, 0, 0, 1703937, 0, 0, 1703938, 0, 0, 1703945, 0, 0, 1703951, 0, 0, 1703952, 0, 0, 1703953, 0, 0, 1703957, 0, 0, 1703958, 0, 0, 1703961, 0, 0, 1703962, 0, 0, 1769472, 0, 0, 1769473, 0, 0, 1769486, 0, 0, 1769487, 0, 0, 1769488, 0, 0, 1769489, 0, 0, 1769490, 0, 0, 1769492, 0, 0, 1769493, 0, 0, 1769494, 0, 0, 1769495, 0, 0, 1835008, 0, 0, 1835009, 0, 0, 1835010, 0, 0, 1835022, 0, 0, 1835023, 0, 0, 1835031, 0, 0, 1900544, 0, 0, 1900545, 0, 0, 1900546, 0, 0, 1900554, 0, 0, 1900555, 0, 0, 1900557, 0, 0, 1900558, 0, 0, 1900559, 0, 0, 1900560, 0, 0, 1900567, 0, 0, 1966080, 0, 0, 1966081, 0, 0, 1966082, 0, 0, 1966091, 0, 0, 1966092, 0, 0, 1966093, 0, 0, 1966094, 0, 0, 1966102, 0, 0, 1966103, 0, 0, 2031616, 0, 0, 2031617, 0, 0, 2031618, 0, 0, 2031625, 0, 0, 2031626, 0, 0, 2031627, 0, 0, 2031628, 0, 0, 2031630, 0, 0, 2031638, 0, 0, 2097152, 0, 0, 2097153, 0, 0, 2097160, 0, 0, 2097161, 0, 0, 2097162, 0, 0, 2097163, 0, 0, 2097166, 0, 0, 2097167, 0, 0, 2097168, 0, 0, 2097169, 0, 0, 2097170, 0, 0, 2097171, 0, 0, 2097172, 0, 0, 2097173, 0, 0, 2097174, 0, 0, 2162688, 0, 0, 2162689, 0, 0, 2162690, 0, 0, 2162694, 0, 0, 2162695, 0, 0, 2162696, 0, 0, 2162697, 0, 0, 2162698, 0, 0, 2162699, 0, 0, 2162707, 0, 0, 2162708, 0, 0, 2228224, 0, 0, 2228225, 0, 0, 2228226, 0, 0, 2228229, 0, 0, 2228230, 0, 0, 2228231, 0, 0, 2228232, 0, 0, 2228233, 0, 0, 2228234, 0, 0, 2228235, 0, 0, 2293760, 0, 0, 2293761, 0, 0, 2293762, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293770, 0, 0, 2293771, 0, 0 )
 script = ExtResource( 3 )
 
+[node name="WorldMap" type="Sprite" parent="."]
+position = Vector2( 576.984, 577.064 )
+texture = ExtResource( 4 )
+
 [node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 172.712, 980.141 )
+z_index = 6
 script = ExtResource( 9 )
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 4.7639, -20.7487 )
 frames = SubResource( 89 )
 animation = "idle_northwest"
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 2.01471, 1.15149 )
+current = true

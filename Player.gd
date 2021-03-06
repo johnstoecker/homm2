@@ -35,7 +35,6 @@ func _change_state(new_state):
 func _physics_process(delta):
 	if not _state == STATES.FOLLOW:
 		return
-	print(_state)
 	var arrived_to_next_point = move_to(target_point_world, delta)
 	if arrived_to_next_point:
 		path.remove(0)

@@ -2,8 +2,11 @@ extends TileMap
 
 # You can only create an AStar node from code, not from the Scene tab
 onready var astar_node = AStar.new()
+
+onready var path_scene = preload("res://Path.tscn")
+onready var path_instance
 # The Tilemap node doesn't have clear bounds so we're defining the map's limits here
-export(Vector2) var map_size = Vector2(16, 16)
+export(Vector2) var map_size = Vector2(64, 64)
 
 # The path start and end variables use setter methods
 # You can find them at the bottom of the script
@@ -23,6 +26,9 @@ onready var _half_cell_size = cell_size / 2
 func _ready():
 	var walkable_cells_list = astar_add_walkable_cells(obstacles)
 	astar_connect_walkable_cells(walkable_cells_list)
+	path_instance = path_scene.instance()
+	add_child(path_instance)
+
 
 
 # Click and Shift force the start and end position of the path to update
@@ -144,18 +150,21 @@ func clear_previous_path_drawing():
 	var point_end = _point_path[len(_point_path) - 1]
 	set_cell(point_start.x, point_start.y, -1)
 	set_cell(point_end.x, point_end.y, -1)
+	path_instance.clearPath()
 
 
 func _draw():
+	print("drawing")
 	if not _point_path:
 		return
 	var point_start = _point_path[0]
 	var point_end = _point_path[len(_point_path) - 1]
-
+	# create start/end tiles on tilemap
 	set_cell(point_start.x, point_start.y, 1)
 	set_cell(point_end.x, point_end.y, 2)
 
 	var last_point = map_to_world(Vector2(point_start.x, point_start.y)) + _half_cell_size
+	path_instance.drawPath(last_point, _point_path, point_end)
 	for index in range(1, len(_point_path)):
 		var current_point = map_to_world(Vector2(_point_path[index].x, _point_path[index].y)) + _half_cell_size
 		draw_line(last_point, current_point, DRAW_COLOR, BASE_LINE_WIDTH, true)
@@ -165,6 +174,7 @@ func _draw():
 
 # Setters for the start and end path values.
 func _set_path_start_position(value):
+	print(value)
 	if value in obstacles:
 		return
 	if is_outside_map_bounds(value):
