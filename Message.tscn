@@ -7,17 +7,11 @@
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.05237
-margin_right = 2.05237
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="MessageLayer" type="CanvasLayer"]
 
 [node name="MessageBox" type="Popup" parent="."]
-margin_right = 40.0
+margin_left = 2.05237
+margin_right = 42.0524
 margin_bottom = 40.0
 script = ExtResource( 4 )
 

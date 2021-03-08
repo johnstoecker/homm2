@@ -21,8 +21,15 @@ func _ready():
 func clearPath():
 	print("clearing")
 	for item in current_path:
-		item.queue_free()
+		if item is Sprite:
+			item.queue_free()
 	current_path = []
+
+func shiftFirstArrow():
+	var node = current_path[0]
+	if node is Sprite:
+		current_path.remove(0)
+		node.queue_free()
 
 func drawPath(point_start, point_path,point_end):
 	

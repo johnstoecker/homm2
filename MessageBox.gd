@@ -1,7 +1,8 @@
 extends Popup
 
 
-var messages = {"1": "Welcome to the website"}
+var messages = {"1": "Welcome to the website",
+"(176, 976)": "Hiiii!"}
 onready var label = $messageText
 # Declare member variables here. Examples:
 # var a = 2
@@ -23,8 +24,14 @@ func _ready():
 	label.text = "Hello Worldddd"
 
 func showFor(key):
-	label.text = messages.key
-	popup()
+	var hash_key = String(key)
+	print('the key is')
+	print(hash_key)
+	print(label)
+	if label is RichTextLabel and messages.has(hash_key):
+		print("has key")
+		label.text = messages[hash_key]
+		popup()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

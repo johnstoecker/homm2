@@ -1,11 +1,15 @@
 extends KinematicBody2D
 
-enum STATES { IDLE, FOLLOW }
+enum STATES { IDLE, TARGET, FOLLOW, PAUSE }
 var _state = null
 
 var path = []
 var target_point_world = Vector2()
 var target_position = Vector2()
+
+onready var message_scene = preload("res://Message.tscn")
+onready var message_instance
+
 
 
 var MAX_SPEED = 200
@@ -20,6 +24,8 @@ var velocity = Vector2()
 # Called when the node enters the scene tree for the first time.func _ready():
 func _ready():
 	_change_state(STATES.IDLE)
+	message_instance = message_scene.instance()
+	add_child(message_instance)
 
 func _change_state(new_state):
 	if new_state == STATES.FOLLOW:
@@ -37,6 +43,8 @@ func _physics_process(delta):
 		return
 	var arrived_to_next_point = move_to(target_point_world, delta)
 	if arrived_to_next_point:
+		get_node("/root/Game/TileMap/Path").shiftFirstArrow()
+		message_instance.get_node('MessageBox').showFor(path[0])
 		path.remove(0)
 		if len(path) == 0:
 			_change_state(STATES.IDLE)
