@@ -556,7 +556,7 @@ tile_data = PoolIntArray( 24, 0, 0, 25, 0, 0, 32, 0, 0, 65537, 0, 0, 65541, 0, 0
 script = ExtResource( 3 )
 
 [node name="WorldMap" type="Sprite" parent="."]
-position = Vector2( 576.984, 577.064 )
+position = Vector2( 675.756, 684.204 )
 texture = ExtResource( 4 )
 
 [node name="Player" type="KinematicBody2D" parent="."]

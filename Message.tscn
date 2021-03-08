@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://message/message_box.bmp" type="Texture" id=2]
+[ext_resource path="res://font/heroes2-pixed.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://MessageBox.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.05237
+margin_right = 2.05237
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MessageBox" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="message_box" type="Sprite" parent="MessageBox"]
+position = Vector2( 410.626, 258.486 )
+texture = ExtResource( 2 )
+
+[node name="TextureButton2" type="TextureButton" parent="MessageBox"]
+margin_left = 105.0
+margin_top = 43.0
+margin_right = 145.0
+margin_bottom = 83.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="messageText" type="RichTextLabel" parent="MessageBox"]
+margin_left = 343.0
+margin_top = 179.0
+margin_right = 723.0
+margin_bottom = 393.0
+custom_fonts/normal_font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
