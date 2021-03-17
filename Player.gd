@@ -27,14 +27,20 @@ func _ready():
 	message_instance = message_scene.instance()
 	add_child(message_instance)
 
+func checkNextTile():
+	if message_instance.get_node('MessageBox').hasMessage(path[0]):
+		message_instance.get_node('MessageBox').showFor(path[0])
+		get_node("/root/Game/TileMap/Path").clearPath()
+		_change_state(STATES.IDLE)
+
 func _change_state(new_state):
 	if new_state == STATES.FOLLOW:
 		path = get_parent().get_node('TileMap').find_path(position, target_position)
 		if not path or len(path) == 1:
 			_change_state(STATES.IDLE)
 			return
-		# The index 0 is the starting cell
-		target_point_world = path[1]
+		path.remove(0)
+		target_point_world = path[0]
 	_state = new_state
 
 
@@ -44,7 +50,7 @@ func _physics_process(delta):
 	var arrived_to_next_point = move_to(target_point_world, delta)
 	if arrived_to_next_point:
 		get_node("/root/Game/TileMap/Path").shiftFirstArrow()
-		message_instance.get_node('MessageBox').showFor(path[0])
+		checkNextTile()
 		path.remove(0)
 		if len(path) == 0:
 			_change_state(STATES.IDLE)
@@ -53,7 +59,7 @@ func _physics_process(delta):
 	#MovementLoop(delta)
 
 func move_to(world_position, delta):
-	var ARRIVE_DISTANCE = 10.0
+	var ARRIVE_DISTANCE = 5.0
 	speed += acceleration * delta
 	if speed > MAX_SPEED:
 		speed = MAX_SPEED;
@@ -62,6 +68,11 @@ func move_to(world_position, delta):
 	var still_moving = position.distance_to(world_position) < ARRIVE_DISTANCE
 	if !still_moving:
 		move_and_slide(movement)
+	else:
+		print('ok....')
+		print(position)
+		print(world_position)
+		print(position.distance_to(world_position))
 	return still_moving
 
 

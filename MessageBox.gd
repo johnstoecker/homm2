@@ -1,8 +1,13 @@
 extends Popup
 
 
-var messages = {"1": "Welcome to the website",
-"(176, 976)": "Hiiii!"}
+# message types:
+# town: show town
+# popup: simple message
+# battle: show image, button, and message
+
+var messages = {"1": { "type": "town", "message": "Welcome to the website"},
+"(176, 976)": { "type": "town", "message": "Welcome to the website"}}
 onready var label = $messageText
 # Declare member variables here. Examples:
 # var a = 2
@@ -23,15 +28,17 @@ func _ready():
 	label.add_color_override("font_color", Color.red)
 	label.text = "Hello Worldddd"
 
+func hasMessage(key):
+	var hash_key = String(key)
+	return (label is RichTextLabel and messages.has(hash_key))
+
 func showFor(key):
 	var hash_key = String(key)
-	print('the key is')
-	print(hash_key)
-	print(label)
 	if label is RichTextLabel and messages.has(hash_key):
-		print("has key")
-		label.text = messages[hash_key]
-		popup()
+		var type = messages[hash_key]["type"]
+		if type == "town":
+			label.text = messages[hash_key]["message"]
+			popup()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

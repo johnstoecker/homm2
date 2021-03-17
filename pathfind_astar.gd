@@ -29,8 +29,6 @@ func _ready():
 	path_instance = path_scene.instance()
 	add_child(path_instance)
 
-
-
 # Click and Shift force the start and end position of the path to update
 # and the node to redraw everything
 #func _input(event):

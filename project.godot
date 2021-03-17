@@ -20,6 +20,10 @@ config/description="Website theme that looks like Heroes of Might and Magic 2"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+mouse_cursor/custom_image="res://cursor/move_cursor.png"
+
 [input]
 
 click={
@@ -39,4 +43,5 @@ quality/intended_usage/framebuffer_allocation=1
 quality/intended_usage/framebuffer_allocation.mobile=1
 quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
