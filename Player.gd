@@ -69,8 +69,6 @@ func move_to(world_position, delta):
 	if !still_moving:
 		move_and_slide(movement)
 	else:
-		print('ok....')
-		print(position)
 		print(world_position)
 		print(position.distance_to(world_position))
 	return still_moving

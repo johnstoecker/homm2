@@ -146,40 +146,38 @@ func clear_previous_path_drawing():
 		return
 	var point_start = _point_path[0]
 	var point_end = _point_path[len(_point_path) - 1]
-	set_cell(point_start.x, point_start.y, -1)
-	set_cell(point_end.x, point_end.y, -1)
+	#set_cell(point_start.x, point_start.y, -1)
+	#set_cell(point_end.x, point_end.y, -1)
 	path_instance.clearPath()
 
 
 func _draw():
-	print("drawing")
 	if not _point_path:
 		return
 	var point_start = _point_path[0]
 	var point_end = _point_path[len(_point_path) - 1]
 	# create start/end tiles on tilemap
-	set_cell(point_start.x, point_start.y, 1)
-	set_cell(point_end.x, point_end.y, 2)
+	#set_cell(point_start.x, point_start.y, 1)
+	#set_cell(point_end.x, point_end.y, 2)
 
 	var last_point = map_to_world(Vector2(point_start.x, point_start.y)) + _half_cell_size
 	path_instance.drawPath(last_point, _point_path, point_end)
-	for index in range(1, len(_point_path)):
-		var current_point = map_to_world(Vector2(_point_path[index].x, _point_path[index].y)) + _half_cell_size
-		draw_line(last_point, current_point, DRAW_COLOR, BASE_LINE_WIDTH, true)
-		draw_circle(current_point, BASE_LINE_WIDTH * 2.0, DRAW_COLOR)
-		last_point = current_point
+	#for index in range(1, len(_point_path)):
+		#var current_point = map_to_world(Vector2(_point_path[index].x, _point_path[index].y)) + _half_cell_size
+		#draw_line(last_point, current_point, DRAW_COLOR, BASE_LINE_WIDTH, true)
+		#draw_circle(current_point, BASE_LINE_WIDTH * 2.0, DRAW_COLOR)
+		#last_point = current_point
 
 
 # Setters for the start and end path values.
 func _set_path_start_position(value):
-	print(value)
 	if value in obstacles:
 		return
 	if is_outside_map_bounds(value):
 		return
 
-	set_cell(path_start_position.x, path_start_position.y, -1)
-	set_cell(value.x, value.y, 1)
+	#set_cell(path_start_position.x, path_start_position.y, -1)
+	#set_cell(value.x, value.y, 1)
 	path_start_position = value
 	if path_end_position and path_end_position != path_start_position:
 		_recalculate_path()
@@ -191,8 +189,8 @@ func _set_path_end_position(value):
 	if is_outside_map_bounds(value):
 		return
 
-	set_cell(path_start_position.x, path_start_position.y, -1)
-	set_cell(value.x, value.y, 2)
+	#set_cell(path_start_position.x, path_start_position.y, -1)
+	#set_cell(value.x, value.y, 2)
 	path_end_position = value
 	if path_start_position != value:
 		_recalculate_path()

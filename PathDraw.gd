@@ -19,7 +19,6 @@ func _ready():
 #	pass
 
 func clearPath():
-	print("clearing")
 	for item in current_path:
 		if item is Sprite:
 			item.queue_free()
