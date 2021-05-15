@@ -12,9 +12,10 @@ font_data = ExtResource( 3 )
 [node name="MessageLayer" type="CanvasLayer"]
 
 [node name="MessageBox" type="Popup" parent="."]
-margin_left = 2.05237
-margin_right = 42.0524
-margin_bottom = 40.0
+visible = true
+margin_left = 9.0
+margin_right = 9.0
+margin_bottom = 4.0
 script = ExtResource( 4 )
 
 [node name="sprite_town" type="Sprite" parent="MessageBox"]
@@ -42,11 +43,14 @@ __meta__ = {
 }
 
 [node name="messageText" type="RichTextLabel" parent="MessageBox"]
-margin_left = 359.0
-margin_top = 179.0
-margin_right = 739.0
-margin_bottom = 393.0
+margin_left = 344.0
+margin_top = 247.0
+margin_right = 743.0
+margin_bottom = 272.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
+fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

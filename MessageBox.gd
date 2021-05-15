@@ -12,11 +12,20 @@ var visited = {}
 var messages = {"1": { "type": "town", "messages": "Welcome to the website"},
 "(176, 976)": { "type": "town", "messages": ["Your friends at the Wizard Academy wave you off onto your great adventure. Good luck, hero!", "Your friends at the Wizard Academy wonder whether you are supposed to be off adventuring", "Your friends at the Wizard Academy are too busy studying to greet you"]},
 "(208, 976)": { "type": "simple", "messages": ["Beside the walls of your home town you find a lucky penny. Neat!", "You found _another_ lucky penny. Wow!", "No more lucky pennies around here"]},
+"(336, 976)": { "type": "simple", "messages": ["An Orc Sorceress beckons you into her hut. As you sit cross legged around her cooking fire, she casts a charm spell. She asks how you feel -- \"Charmed, I'm sure\", you reply.","The Sorceress is gone, but has anticipated your return, and left you a cup of tea."]},
+"(368, 848)": { "type": "simple", "messages": ["The hobbits pour out of the hole. \"Mind those _other_ Hobbits, they are vagabonds and rascals!\" They shake their fists westward.", "The hobbits open their door, make rude gestures to the west, and close their door."]},
+"(112, 848)": { "type": "simple", "messages": ["The hobbits shout from behind the door, \"No more ill-wishers, thank you very much!\"", "You knock and knock on the door, but no response. Oops, you dented the door a bit."]},
 "(112, 1008)": { "type": "mine", "messages": ["No one ventures into the spooky old mine just outside town. Just the sort of thing for an...other adventurer. You and your horse shy away", "Girding your wizard robe, you venture into the haunted mine. An old hermit has taken up residence and beats you away with his stick. 'It's mine! It's a mine!' he shouts.", "The hermit eyes you angrily from the mine entrance"]},
 "(112, 1072)": { "type": "building", "messages": ["The heat of the forge singes your eyebrow. A wizard, at the forge?! The blacksmith chuckles.", "You consider casting a minor curse on the sassy blacksmith, but opt instead to bless his anvil. Turn the other cheek, regardless of his cheek.", "The blacksmith hums a happy tune and waves at you"]},
 "(112, 1136)": { "type": "monster", "messages": ["A friendly black dragon stretches her wing to you in greeting. You are in awe at the size of her", "Giant claw prints mark the ground of a recent dragon's passage" ]},
-"(80, 880)": { "type": "feature", "messages": ["You and your horse drinks from the minty fountain.", "Your teeth gleam after another drink from the minty fountain", "You can feel your enamel etching away from the minty residue left by the water", "With a gritty and porous feeling in your teeth, you wisely avoid the minty fountain." ]},
-"(144, 816)": { "type": "building", "messages": ["Your horse neighs a greeting to her old friends. You pat her on the neck and give her an apple.", "You give your horse another apple.", "You offer another apple to your horse, but she nickers it away" ]},}
+"(80, 880)": { "type": "feature", "messages": ["You and your horse drink from the minty fountain.", "Your teeth gleam after another drink from the minty fountain", "You can feel your enamel etching away from the minty residue left by the water", "With a gritty and porous feeling in your teeth, you wisely avoid the minty fountain." ]},
+"(144, 816)": { "type": "building", "messages": ["Your horse neighs a greeting to her old friends. You pat her on the neck and give her an apple.", "You give your horse another apple.", "You offer another apple to your horse, but she nickers it away" ]},
+"(528, 720)": { "type": "building", "messages": ["Your steps echo in the silent temple. Between the columns, the wind seems to whisper of fallen heroes, mighty kings, and slain gods.", "You burn an offering in the temple cauldron, and feel a gentle presence watching you."]},
+"(528, 912)": { "type": "feature", "messages": ["The idol of the Old Men watches you with stoney eyes. Flicks of granite sparkle in the afternoon sun."]},
+"(528, 976)": { "type": "feature", "messages": ["The Orcish guard bars your passage to his chieftain."]},
+
+
+}
 
 onready var label = $messageText
 onready var spriteTown = $sprite_town
@@ -40,7 +49,8 @@ func _ready():
 	#label.push_font(dynamic_font)
 	label.add_font_override("font", dynamic_font)
 	label.add_color_override("font_color", Color.red)
-	label.text = "Hello Worldddd"
+	label.bbcode_enabled = true
+	#label.text = "Hello Worldddd"
 
 
 func _clear_sprites():
@@ -63,11 +73,12 @@ func showFor(key):
 		else:
 			visited[hash_key] = 1
 		var type = messages[hash_key]["type"]
-		if type == "town":
-			spriteTown.visible = true
-		if type == "simple":
-			spriteHorizBox.visible = true
-		label.text = messages[hash_key]["messages"][message_index]
+		#if type == "town":
+		#	spriteTown.visible = true
+		#if type == "simple":
+		spriteHorizBox.visible = true
+		label.bbcode_text = "[center]" + messages[hash_key]["messages"][message_index] + "[/center]\n"
+		
 		popup()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
