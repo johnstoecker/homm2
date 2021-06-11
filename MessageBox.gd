@@ -20,11 +20,17 @@ var messages = {"1": { "type": "town", "messages": "Welcome to the website"},
 "(112, 1136)": { "type": "monster", "messages": ["A friendly black dragon stretches her wing to you in greeting. You are in awe at the size of her", "Giant claw prints mark the ground of a recent dragon's passage" ]},
 "(80, 880)": { "type": "feature", "messages": ["You and your horse drink from the minty fountain.", "Your teeth gleam after another drink from the minty fountain", "You can feel your enamel etching away from the minty residue left by the water", "With a gritty and porous feeling in your teeth, you wisely avoid the minty fountain." ]},
 "(144, 816)": { "type": "building", "messages": ["Your horse neighs a greeting to her old friends. You pat her on the neck and give her an apple.", "You give your horse another apple.", "You offer another apple to your horse, but she nickers it away" ]},
+"(432, 688)": { "type": "building", "messages": ["A lone peasant shakes her scythe at you from the wall of her hamlet. 'Away wit ye!' she cries", "The peasant shakes her scythe at you again." ]},
+"(336, 688)": { "type": "monster", "messages": ["We are the brothers three, and Minotaurs are we. My gem mine is very small, why not visit my brothers?", "Just a few gems, and none to trade. Perhaps a visit to my brothers?" ]},
+"(272, 560)": { "type": "monster", "messages": ["It is I, the second Minotaur brother. If you wish to trade gems, go see the third brother.", "We gave at the office." ]},
+"(208, 496)": { "type": "monster", "messages": ["You said you wish to trade gems? But I have only gold! Away with you.", "After indicating you wish to trade gold, the third minotaur cheats you mercilessly." ]},
 "(528, 720)": { "type": "building", "messages": ["Your steps echo in the silent temple. Between the columns, the wind seems to whisper of fallen heroes, mighty kings, and slain gods.", "You burn an offering in the temple cauldron, and feel a gentle presence watching you."]},
 "(528, 912)": { "type": "feature", "messages": ["The idol of the Old Men watches you with stoney eyes. Flicks of granite sparkle in the afternoon sun."]},
-"(528, 976)": { "type": "feature", "messages": ["The Orcish guard bars your passage to his chieftain."]},
+"(528, 976)": { "type": "feature", "messages": ["The Orcish guard bars your passage to his chieftess."]},
+"(496, 976)": { "type": "building", "messages": ["You sneak around the guard to see the chieftess. She commands you, 'Seek ye Wizard Academy #2, young apprentice'"]},
+"(592, 1008)": { "type": "building", "messages": ["The empty Orc hut has a faint smell of wolf fur, and discard Orc candy wrappers tumble around the wooden floor."]},
 
-
+"(1072, 144)": { "type": "building", "messages": ["Across the mountains, far from your home, you come to Wizard Academy #2, and reach the end of your quest. Congratulations, adventurer."]},
 }
 
 onready var label = $messageText
@@ -71,7 +77,7 @@ func showFor(key):
 			message_index = visited[hash_key]
 			visited[hash_key] = min(visited[hash_key] + 1, messages[hash_key]["messages"].size()-1)
 		else:
-			visited[hash_key] = 1
+			visited[hash_key] = min(1, messages[hash_key]["messages"].size()-1)
 		var type = messages[hash_key]["type"]
 		#if type == "town":
 		#	spriteTown.visible = true
